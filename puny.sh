@@ -1,8 +1,11 @@
 #!/bin/bash
 
+# ensure that root dir is set
+[ ! -z ${PUNY_NOTEPAD_ROOT} ] || exit "err: PUNY_NOTEPAD_ROOT is unset"
+
 new() {
 	now="$(date +'%m_%d_%Y')" 
-	dir="../${now}"
+	dir="${PUNY_NOTEPAD_ROOT}/${now}"
 	ext="md"
 
 	# create dir if doesn't exist
