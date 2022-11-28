@@ -23,7 +23,7 @@ new() {
 
 	seq=0
 	for n in $(seq -w 01 99); do
-		path="./${dir}/${name}_${n}.${ext}"
+		path="${dir}/${name}_${n}.${ext}"
 		[[ ! -f $path ]] && { printf "${contents}" > $path; break; }
 	done
 
